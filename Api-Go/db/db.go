@@ -2,6 +2,8 @@ package db
 
 import (
 	"log"
+	//Para el railway
+	"os"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
@@ -11,8 +13,13 @@ import (
 var DB *gorm.DB
 
 func Connect() {
-	// Configuracion con el server de postgres cambia pass o user si ves que no va
-	dsn := "host=localhost user=postgres password=root dbname=SupportApp port=5432 sslmode=disable TimeZone=Europe/Madrid"
+	// Aqui se pilla da la databse url que ofrece railway, en cado contrario usa la config local
+	dsn := os.Getenv("DATABASE_URL")
+	if dsn == "" {
+		// Si no hay DATABASE_URL, usamos configuración local por defecto
+		dsn = "host=localhost user=postgres password=root dbname=SupportApp port=5432 sslmode=disable TimeZone=Europe/Madrid"
+	}
+
 	connection, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {
 		log.Fatal("Error al conectar a la base de datos:", err)
