@@ -3,8 +3,10 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 	"support-api/db"
 
+	//Para variables de entorno para el Railway
 	// Para manejar cada table y organizarlo lo colocamos en handlers para cada una
 	"support-api/handlers"
 )
@@ -50,8 +52,12 @@ func main() {
 	http.HandleFunc("/case/create", withCors(handlers.CreateCase))
 	http.HandleFunc("/case/set-status", withCors(handlers.SetCaseStatus))
 
-	// El puerto puede que este ocupado por otra cosa que tengas
-	log.Println("Servidor escuchando en http://localhost:8080/categories")
-	log.Println("Servidor escuchando en http://localhost:8080/user/login")
-	http.ListenAndServe(":8080", nil)
+	// Railway se encargara de asginar el puerto adecuado para el despliegue, en local pillara el 8080
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080" // Por defecto en local
+	}
+
+	log.Printf("Servidor escuchando en http://localhost:%s", port)
+	log.Fatal(http.ListenAndServe(":"+port, nil))
 }
