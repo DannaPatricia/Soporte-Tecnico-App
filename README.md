@@ -112,8 +112,7 @@ Este proyecto ha sido desarrollado de forma **colaborativa** por estudiantes del
 
 
 **Autores del proyecto:**
-
-- Danna Patricia Collaguazo Mera
-- Samuel Moniz Pereira
+- [Danna Patricia](https://github.com/DannaPatricia)
+- [Samuel Moniz Pereira](https://github.com/sam324sam)
 
 ---
