@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/soporte-tecnico-app/",
+  base: "/Soporte-Tecnico-App/",
   plugins: [
     vue(),
     vueDevTools(),
