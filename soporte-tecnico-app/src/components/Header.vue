@@ -61,7 +61,7 @@ export default {
     <header class="page-header">
         <div class="user-container">
             <div class="title">
-                <RouterLink to="/"><img src="/logo-loadfront.png" alt="logo" /></RouterLink>
+                <RouterLink to="/">Soporte técnico App</RouterLink>
             </div>
             <nav class="user-nav">
                 <ul class="user-nav-list">
@@ -117,6 +117,12 @@ export default {
     font-size: 1.5em;
     font-weight: bold;
     margin: auto 2em;
+}
+
+.title a{
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #1e293b;
 }
 
 .title img {
