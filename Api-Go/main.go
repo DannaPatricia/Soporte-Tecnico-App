@@ -14,12 +14,15 @@ import (
 // Para las peticiones
 func withCors(handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
+		// Lee el header Origin de la peticion para saber de donde viene la solicitud
 		origin := r.Header.Get("Origin")
+		// Lista de los origenes permitidos
 		allowedOrigins := map[string]bool{
 			"http://localhost:5173":           true,
 			"https://dannapatricia.github.io": true,
 		}
 
+		// Si el origen de la peticion coincide se permite el acceso al frontend
 		if allowedOrigins[origin] {
 			w.Header().Set("Access-Control-Allow-Origin", origin)
 		}
