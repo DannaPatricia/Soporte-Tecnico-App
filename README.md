@@ -4,6 +4,13 @@
 
 ---
 
+---
+##Usuarios y claves de prueba
+- usuario1: 1234
+- soporte1: 1234
+
+---
+
 ## Descripción del proyecto
 
 Esta aplicación permite a los usuarios autenticarse con usuario y contraseña para:
@@ -116,3 +123,4 @@ Este proyecto ha sido desarrollado de forma **colaborativa** por estudiantes del
 - [Samuel Moniz Pereira](https://github.com/sam324sam)
 
 ---
+
